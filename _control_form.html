@@ -1,0 +1,15 @@
+{% from "_formhelpers.html" import render_field %}
+<form id="control_form" method="post" action=".">
+    <dl>
+        {{ render_field(form.a_state) }}
+        {{ render_field(form.b_state) }}
+    </dl>
+    <p><input id="submit" type="submit" value="Submit"></p>
+</form>
+
+<span id="response">
+{% for category, message in get_flashed_messages(with_categories=True) %}
+<p class="{{ category }}">{{ message }}</p>
+{% endfor %}
+</span>
+

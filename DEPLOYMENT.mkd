@@ -1,0 +1,36 @@
+% Deploying the controller
+% 10 August 2011
+% Douglas Watson
+
+I'm still figuring out how exactly to deploy the application. For the moment, the sensible choice seems to be hooking up the web application to an Apache server, and on the other side running both the RPyC name server and the Serial Driver as deamons (launched on startup).
+
+Web application
+===============
+
+The first step is be to package it up as a python package, so that it can be installed in a vitualenv, and imported in a separate python script as:
+	
+	from mywebapp import app as application
+
+This is required to make a wsgi application.
+
+Web server
+----------
+
+The simplest production web server is to CherryPy's server, adapting it for Flask. I've created a `cherrypy.conf` file in the web/ directory, that allows starting a web server with the command:
+	
+	cherryd -c cherrypy.conf -i request_handler
+
+Or start it as a deamon:
+
+	cherryd -c cherrypy.conf -i request_handler -p /var/run/cherrypy.pid -d
+
+To kill the process, simply get the PID from the .pid file:
+
+	kill `cat /var/run/cherrypy.pid`
+
+I still need to write an init.d script for it, and make it run as a daemon, but that's good enough for the moment.
+
+Driver and registry server
+==========================
+
+Look into init.d scripts.

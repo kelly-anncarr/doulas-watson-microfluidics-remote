@@ -1,0 +1,105 @@
+/* -----------------------
+ *        LAYOUT
+ *  ---------------------- */
+body {
+    text-align: center;
+    font-family:  Helvetica, sans;
+	font-size: 12pt;
+	background: #e1f6c9 url('/static/background-plasmids.png');
+}
+
+#main {
+    display: block;
+    text-align: left;
+    margin: 0px auto;
+    width: 800px;
+	min-height: 412px;
+    background: #FFFFFF;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+#header {
+    height: 3em;
+    padding: 30px;
+    background-color: #1F1F1F;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-topright: 7px;
+    -webkit-border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+h1 {
+    display: inline;
+	text-align: center;
+    color: white;
+    height: 100%;
+    margin: auto;
+    padding-top: 2em;
+}
+
+div #videoplayer {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 460px;
+	height: 284px;
+    margin: 10px;
+}
+
+#controls {
+    display: block;
+    text-align: center;
+    margin-left: 470px;
+	padding: 15px;
+}
+
+#response{
+    display: inline;
+    height: 5em;
+}
+
+/* -----------------------
+ *     FONTS AND TEXT
+ *  ---------------------- */
+
+.errors {
+    color: red;
+	font-size: 9pt;
+}
+
+#response p {
+    color: gray;
+}
+
+#response p.errors {
+    color: red;
+}
+
+/* -- reduce the indent of error messages -- */
+ul {
+	padding-left: 0;
+}
+
+li {
+	margin-left: 0;
+}
+/* --                                     -- */
+
+td {
+	text-align: center;
+}
+
+td label {
+	/* display labels above the checkboxes */
+	display: block;
+}
+
+dt {
+	/* these are the form labels, btw */
+	display: block;
+	background: #efefef;
+}
+
